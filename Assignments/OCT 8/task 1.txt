@@ -1,0 +1,129 @@
+
+                                                                       TASK-1 (08-10-2020)
+
+
+1)Difference between HTTP1.1 and HTTP2 ?
+	
+	HTTP stands for hypertext transfer protocol.The first usable version of HTTP was created in 1997. Because it went through several stages of development, 
+this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created.
+	HTTP/2 solves several problems that the creators of HTTP/1.1 did not anticipate.
+Some of the ways HTTP2 is different from HTTP1.1 are as follows:
+
+PRIORITIZATION:
+	HTTP/2 is much faster and more efficient than HTTP/1.1. One of the ways in which HTTP/2 is faster is in how it prioritizes content during the loading 
+process.Prioritization refers to the order in which pieces of content are loaded.HTTP/2 offers a feature called weighted prioritization. This allows developers 
+to decide which page resources will load first, every time.This allows them to maximize perceived and actual page load speed to a degree that was not possible 
+in HTTP/1.1.
+
+MULTIPLEXING:
+	 HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it. In contrast, HTTP/2 is 
+able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource. HTTP/2 does this by splitting 
+data into binary-code messages and numbering these messages so that the client knows which stream each binary message belongs to.
+
+SERVER PUSH:
+	Typically, a server only serves content to a client device if the client asks for it. However, this approach is not always practical for modern webpages,
+which often involve several dozen separate resources that the client must request. HTTP/2 solves this problem by allowing a server to "push" content 
+to a client before the client asks for it. The server also sends a message letting the client know what pushed content to expect.
+
+HEADER COMPRESSION:
+	Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 and HTTP/2 compress HTTP messages to make them smaller. However,
+HTTP/2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. This eliminates a few bytes from every
+HTTP packet. Given the volume of HTTP packets involved in loading even a single webpage, those bytes add up quickly, resulting in faster loading.
+
+
+2)HTTP version history:
+
+      HTTP has four versions — HTTP/0.9, HTTP/1.0, HTTP/1.1, and HTTP/2.0. 
+  
+         1)HTTP/0.9 — The One-line Protocol
+               # a simple client-server,request-response.
+               # Request nature: single-line (method + path for requested document)
+               # Methods supported: GET only.
+               # Response type: only hypertext were transmitted and no other type of documents.
+               # Connection nature: terminated immediately after the response
+               # No HTTP headers (cannot transfer other content type files),
+               # No status/error codes, No URLs, No versioning.in case of a problem, a specific HTML file was send back with the description of the problem 
+		 contained in it, for human consumption.
+        
+	2)HTTP/1.0:
+	       # Browser-friendly protocol
+	       # Provided header fields including rich metadata about both request and response (HTTP version number, status code, content type)
+               # Response: not limited to hypertext 
+                 (Content-Type header provided ability to transmit files other than plain HTML files — e.g. scripts, stylesheets, media)
+	       # Methods supported: GET , HEAD , POST
+	       # Connection nature: terminated immediately after the response
+	
+ Both HTTP/0.9 and HTTP/1.0 required to open up a new connection for each request (and close it immediately after the response was sent).
+ Each time a new connection establishes, a TCP three-way handshake should also occur. HTTP/1.1 solved this with persistent connections.
+      
+	 3)HTTP/1.1:
+	      # This is the HTTP version in common use.
+              # Introduced critical performance optimizations and feature enhancements — persistent and pipelined connections,compression/decompression, 
+	         virtual hosting (a server with a single IP Address hosting multiple domains), faster response.
+	      # Methods supported: GET , HEAD , POST , PUT , DELETE , TRACE , OPTIONS.
+	      # Connection nature: long-lived.
+	
+	 4)The HTTP/2 
+	      # It is a binary protocol rather than text. It can no longer be read and created manually. Despite this hurdle, 
+                improved optimization techniques can now be implemented.
+	      # It is a multiplexed protocol. Parallel requests can be handled over the same connection, removing the order and blocking constraints of the
+                HTTP/1.1 protocol.
+	      # It compresses headers. As these are often similar among a set of requests, this removes duplication and overhead of data transmitted.
+              # It allows a server to populate data in a client cache, in advance of it being required, through a mechanism called the server push.
+
+
+3)Differences between browser js(console) and nodejs:
+             # In the browser, most of the time what you are doing is interacting with the DOM, or other Web Platform APIs like Cookies. Those do not exist in 
+Node,of course. You don’t have the document, window and all the other objects that are provided by the browser.
+	     # In the browser, we don’t have all the nice APIs that Node.js provides through its modules, like the filesystem access functionality.
+	     # Another big difference is that in Node.js you control the environment. Unless you are building an open source application that anyone can deploy 
+anywhere, you know which version of Node you will run the application on. Compared to the browser environment, where you don’t get the luxury to choose what 
+browser your visitors will use, this is very convenient.
+  	     # Another difference is that Node uses the CommonJS module system, while in the browser we are starting to see the ES Modules standard being implemented.
+
+
+4)Abstract working of Js engine:
+
+ 	   # Once the code is received, we need to change it in a way that the compiler can understand. This process is called PARSING and consists of two parts: 
+ the scanner and the parser itself.
+	   # The scanner takes the JS file and converts it to the list of known tokens.
+	   # The parser picks it up and creates an Abstract Syntax Tree (AST): a tree representation of the source code.
+    	   # V8 uses an interpreter called IGNITION.Initially, it takes an abstract syntax tree and generates byte code.
+	   # To make it run faster, the byte code can be sent to the optimizing compiler TURBOFAN along with feedback data. The optimizing compiler makes certain 
+assumptions based on it and then produces highly-optimized machine code.
+
+
+5)What happens if we type a url in the address bar?
+ 
+	  1)The browser checks the cache for a DNS record to find the corresponding IP address:
+                   DNS(Domain Name System) is a database that maintains the name of the website (URL) and the particular IP address it links to.Every single URL 
+on the internet has a unique IP address assigned to it. 
+	 2)The browser initiates a TCP connection with the server:
+		    Once the browser receives the correct IP address, it will build a connection with the server that matches the IP address to transfer information.
+Browsers use internet protocols to build such connections. There are several different internet protocols that can be used, but TCP is the most common protocol used 
+for many types of HTTP requests.
+	 3)The browser sends an HTTP request to the webserver:
+		   Once the TCP connection is established, it is time to start transferring data!.The browser will send a GET request asking for the web page. 
+If you’re entering credentials or submitting a form, this could be a POST request. This request will also contain additional information such as browser
+identification (User-Agent header), types of requests.
+	 4) The server handles the request and sends back a response:
+		  The server contains a webserver that receives the request from the browser and passes it to a request handler to read and generate a response. 
+The request handler is a program that reads the request, its’ headers, and cookies to check what is being requested and also update the information on the server 
+if needed. Then it will assemble a response in a particular format (JSON, XML, HTML).
+         5)The server sends out an HTTP response:
+		  The server response contains the web page you requested as well as the status code.
+      There are five types of statuses detailed using a numerical code.
+                1xx indicates an informational message only
+                2xx indicates success of some kind
+                3xx redirects the client to another URL
+                4xx indicates an error on the client’s part
+                5xx indicates an error on the server’s part
+    	 6) The browser displays the HTML content:
+                  The browser displays the HTML content in phases.First, it will render the bare bone HTML skeleton.Then it will check the HTML tags and send out 
+GET requests for additional elements on the web page, such as images, CSS stylesheets, JavaScript files, etc. These static files are cached by the browser, 
+so it doesn’t have to fetch them again the next time you visit the page.
+
+        
+
+
+
