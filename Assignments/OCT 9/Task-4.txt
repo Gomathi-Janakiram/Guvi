@@ -1,0 +1,46 @@
+
+4)OBJECTS AND ITS INTERNAL REPRESENTATION IN JS:
+    
+     *	Objects are very most important in each and every language.
+     *	In java script we have primitive data types called String ,number,
+boolean,null and object is a composite data type in java script. 
+     *	primitive data types can store only single value where as objects 
+can store multiple values of primitive data in it. 
+     *	Primitive data types are of copy by value and composite data types
+are copy by reference in js.
+
+Example 1:
+	var a = 10;
+	var b =a;
+	var b = 20;
+	console.log(a)//gives 10 ->copy by value
+
+Example 2:
+	var arr = [1];
+	var arr1 = arr;
+	arr1[0]= 4;
+	console.log(arr)//gives [4] ->copy by reference
+
+Array:
+     *	Array is an object in JavaScript and it is of indexing based lets see below example
+	var arr = [1,”two”,3.5,[4,5,6,7]]
+     *	arr in above example is an array so in an array we can declare any data type 
+like string int float and even another array and object as well. 
+     *	So we said array is indexed based it means indexing start from 0 to end of array
+for example if we want to retrive third element we can do by arr[2] //gives 3.5.
+
+JSON OBJECT:
+	JSON object is a key value pair in JavaScript where as array is index based key 
+should be of string type and value can be anything like int float string array an another 
+JSON object also and can be function also.lets see and example .
+	var json = {“name”:”akhil”, ”number”: 95543434344}
+     *	json is an JSON object. In above example we can retrive value of json object by 
+using json[“name”] or json.name//gives akhil. 
+     *	Lets see another example.If we give number or any other data type than string 
+in key it will automatically convert into string data type. 
+     *	Lets see one example below to demonstrate that
+	var json = {10: ”apple”};
+     *	The above example will be treated as var json = {“10”: ”apple”};
+     *	To retrive the apple in above example we use json[“10”]  //gives apple.
+     *	Value as function in JSON OBJECT
+	var json = {“name”:”akhil” ,”number” : 9553388312, fun: function(){console.log(json.name,json.number)}}   //gives akhil,9553388312.

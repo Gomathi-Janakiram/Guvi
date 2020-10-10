@@ -1,0 +1,24 @@
+
+2) Why there is difference in behaviour for copying contents in primitive and non-primitive type?
+
+		The basic rule in JavaScript is : Primitive types are manipulated by value, and reference types, as the name suggests, are manipulated by 
+reference. Numbers and booleans are primitive types in JavaScript -- primitive because they consist of nothing more than a small, fixed number of bytes that 
+are easily manipulated at the low (primitive) levels of the JavaScript interpreter.
+               Objects, on the other hand, are reference types. Arrays and functions, which are specialized types of objects, are therefore also reference types.
+These data types can contain arbitrary numbers of properties or elements, so they cannot be manipulated as easily as fixed-size primitive values can. 
+Since object and array values can become quite large, it doesn't make sense to manipulate these types by value, as this could involve the inefficient copying and 
+comparing of large amounts of memory. 
+
+DIFFERENCE BETWEEN BY VALUE AND BY REFERENCE:
+
+ 	There are two fundamentally distinct ways to manipulate data values. These techniques are called "by value" and "by reference."
+When a value is manipulated "by value", it is the value of the variable that matters. In an assignment, a copy of the actual value is made and that copy is stored in
+a variable, object property, or array element; the copy and the original are two totally independent values that are stored separately. When a variable is passed by
+value to a function, a copy of the variable is passed to the function; if the function modifies the value, the change affects only the function's copy of the variable
+-- it does not affect the original variable.Finally, when a variable is compared by value to another variable,the two distinct pieces of data must represent exactly 
+the same value. 
+       The other way of manipulating a value is "by reference". With this technique, there is only one actual copy of the value; references to that value are 
+manipulated.If a value is manipulated by reference, variables do not hold that value directly; they hold only references to it. It is these references that are copied,
+passed, and compared. So, in an assignment made by reference, it is the reference to the value that is assigned, not a copy of the value and not the value itself.
+After the assignment, the new variable refers to the same value that the original variable refers to. Both references are equally valid and both can be used to 
+manipulate the value -- if the value is changed through one reference, that change also appears through the original reference. 

@@ -1,0 +1,44 @@
+                                                
+1)How do you copy by value a composite data type?
+ 	 i)ARRAYS: If we have to copy by value in arrays,we can use slice() operation.Basically, the slice() operation clones the array and returns a 
+reference to a new array.
+                  EXAMPLE:
+        		var a=[1,2,3,"hai"]
+			var b=a   //assigning a to b
+			b
+	 		 >>>(4) [1, 2, 3, "hai"]
+	
+        		b[3]="hello!"
+			a
+			 >>>(4) [1, 2, 3, "hello!"]  //We have changed b but a has also changed due to Call by Reference.
+
+       
+        		var c=a.slice()    //assigning a to c. Slice clones the array and gives the reference to new array.
+        		c[3]="Welcome"   
+        		c
+			 >>>(4) [1, 2, 3, "Welcome"]
+
+        		a
+			 >>>(4) [1, 2, 3, "hello!"] //We have changed c but a is not affected.Bahaves as if it is primitive datatype (Call by Value).
+
+	  ii)OBJECTS: If we have to copy by value in objects,we can convert the object to a string and then parse it.By doing this,changing the values of the 
+variable which is assigned to the original will not change the original variable.
+                 EXAMPLE:
+			var orig={"name":"original","age":"20"}
+			var dup=orig;   //assigning orig object to dup
+			dup["name"]="duplicate"
+   			orig
+			 >>>{name: "duplicate", age: "20"}
+
+			var dummy=JSON.parse(JSON.stringify(dup))  //Now dummy will contain dup 
+			dummy["name"]="dummy"
+			dummy
+			 >>>{name: "dummy", age: "20"} 
+			
+			dup
+			 >>>{name: "duplicate", age: "20"}   //We have changed dummy but this did not affect dup...
+
+
+
+
+
