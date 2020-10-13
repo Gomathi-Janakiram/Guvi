@@ -1,0 +1,33 @@
+How to compare two Json objects having the same property but different in order?
+
+	var a={"a":3,"b":2,"c":1}
+	var b={"c":1,"b":2,"a":3}
+
+	We can compare these two objects with JSON.stringify(a)== JSON.stringify(b) but this will return false since it does consider order of the object.
+For comparing two objects where properties are not in same order we can use .isEqual().
+
+			_.isEqual(a,b)
+
+	we can also loop each property and value of the objects...
+
+
+		var flag=false;
+		for(var key in a){
+    		    if(key in b && a[key]===b[key])
+		     {
+        		  flag=true;
+    		     }
+   		     else
+		     {
+        		  flag=false;
+        		  break;
+   		     }
+		}
+		if(flag===true)
+		{
+    		    console.log("Equal")
+		}
+		else
+		{
+   	            console.log("Not equal")
+		}

@@ -1,0 +1,63 @@
+
+Authorization and Cors:
+
+	Cross-Origin Resource Sharing (CORS) is a protocol that enables scripts running on a browser client to interact with resources from a different origin.
+This is useful because,XMLHttpRequest follows same-origin policy,i.e., JavaScript can only make calls to URLs that live on the same origin as the location where 
+the script is running. For example, if a JavaScript app wishes to make a call to an API running on a different domain, it would be blocked from doing so thanks
+to the same-origin policy.
+
+	Most of the time, a script running in the user's browser would only ever need to access resources on the same origin. So the fact that JavaScript can't 
+normally access resources on other origins is a good thing for security.
+
+	"other origins" means the URL being accessed differs from the location that the JavaScript is running from, by having:
+
+		a different scheme (HTTP or HTTPS)
+		a different domain
+		a different port
+
+Identifying a CORS Response:
+
+	When a server has been configured correctly to allow cross-origin resource sharing, some special headers will be included. Their presence can be used 
+to determine that a request supports CORS. Web browsers can use these headers to determine whether or not an XMLHttpRequest call should continue or fail.
+
+	There are a few headers that can be set, but the primary one that determines who can access a resource is Access-Control-Allow-Origin. This header specifies 
+which origins can access the resource. 
+	
+	For example, to allow access from any origin, you can set this header as follows:
+
+		Access-Control-Allow-Origin: *
+		
+		Or to a specific origin:
+		Access-Control-Allow-Origin: https://example.com
+
+CORS Request Types:
+	There are two types of CORS request: "simple" requests, and "preflight" requests, and it's the browser that determines which is used.
+
+Simple requests (GET, POST, and HEAD):
+
+The browser deems the request to be a "simple" request when:
+
+	#One of these methods is used: GET, POST, or HEAD
+	#A CORS safe-listed header is used
+	#No event listeners are registered on any XMLHttpRequestUpload object
+
+Preflight requests (OPTIONS):
+
+	#If a request does not meet the criteria for a simple request, the browser will instead make an automatic preflight request using the OPTIONS method.
+This call is used to determine the exact CORS capabilities of the server, which is in turn used to determine whether or not the intended CORS protocol is understood.
+If the result of the OPTIONS call dictates that the request cannot be made, the actual request to the server will not be executed.
+
+The preflight request sets the mode as OPTIONS and sets a couple of headers to describe the actual request that is to follow:
+
+	#Access-Control-Request-Method: The intended method of the request (e.g., GET or POST)
+	#Access-Control-Request-Headers: An indication of the custom headers that will be sent with the request
+	#Origin: The usual origin header that contains the script's current origin
+
+AUTHORIZATION:
+
+	Authorization is to give access rights/privileges to resources, which is related to computer security and to access control in particular.More formally, 
+"to authorize" is to define an access policy. 
+	For example, human resources staff are normally authorized to access employee records. During operation, the system uses the access control rules to decide 
+whether access requests from (authenticated) consumers shall be approved or disapproved.Resources include individual files or an item's 
+data,computer programs, computer devices and functionality provided by computer applications. 
+	
