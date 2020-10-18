@@ -1,0 +1,310 @@
+.container{
+    background-color:rgb(41, 10, 41) ;
+    /* border: 2px solid black; */
+    border-radius: 50px;
+    height: 4200px;
+    width: 700px;
+    margin: 50px auto;
+    overflow: hidden;
+
+}
+.border{
+    border: 2px dotted white;
+    border-radius:50px;
+    width:600px;
+    height:4100px;
+    position: absolute;
+    top: 100px;
+    left:310px;
+}
+.first{
+    background-color:rgb(41, 10, 41) ;
+    width:750px;
+    height:300px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    transform:rotate(-4deg);
+    margin-top: -30px;
+    margin-left: -25px;
+}
+.second{
+    background-color: lightgray;
+   width:750px;
+   height:350px;
+   transform:rotate(-4deg);
+   margin-top: -5px;
+   margin-left: -15px;
+   margin-right:-50px;
+}
+.third{
+    background-color:rgb(41, 10, 41) ;
+    height: 400px;
+    width:750px;
+    transform: rotate(-4deg);
+    margin-left: -20px;
+}
+.fourth{
+    background-color: seashell ;
+    height: 400px;
+    width:750px;
+    transform: rotate(-4deg);
+    margin-left: -20px;
+}
+.fifth{
+    background-color: pink;
+    height: 380px;
+    width:750px;
+    transform: rotate(-4deg);
+    margin-left: -20px;
+}
+.sixth{
+    background-color:lightblue;
+    height: 450px;
+    width:750px;
+    transform: rotate(-4deg);
+    margin-left: -20px;
+}
+.seven{
+    background-color:rgb(41, 10, 41);
+    height: 500px;
+    width:750px;
+    transform: rotate(-4deg);
+    margin-left: -20px;
+}
+.eigth{
+    background-color: rgb(226, 148, 216);
+    height: 500px;
+    width:750px;
+    transform: rotate(-4deg);
+    margin-left: -20px;
+}
+.ninth{
+    background-color: seashell ;
+    height: 400px;
+    width:750px;
+    transform: rotate(-4deg);
+    margin-left: -20px;
+}
+.tenth{
+    background-color: rgb(56, 164, 201);
+    height: 500px;
+    width:750px;
+    transform: rotate(-4deg);
+    margin-left: -20px;
+}
+#content1{
+    color: white;
+    margin-top:100px;
+    text-align: center;
+    font-size:13px;
+    transform: rotate(4deg);
+    letter-spacing: 8px;
+    line-height: 2;
+
+}
+#heading1::first-letter{
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    color:  seashell ;
+}
+#heading1{
+    color:pink;
+}
+#heading2::first-letter{
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    color: black ;
+}
+#content2{
+    transform: rotate(4deg);
+    position: relative;
+    top:50px;
+    left:85px;
+}
+#inner-content1{
+    margin-left: 50px;
+    width:500px;
+    text-align: justify;
+    line-height: 1.5;
+    /* background-color: black; */
+}
+
+#content3{
+    transform: rotate(4deg);
+    position: relative;
+    top:50px;
+    left:150px;
+    font-size: 20px;
+    color: white;
+}
+#background{
+    font-family: 'Piedra', cursive;
+    position: relative;
+    left:50px;
+    color:black;
+    font-size: 40px;
+    letter-spacing: 6px;
+}
+#heading3::first-letter{
+    font-family: 'Great Vibes', cursive;
+    font-size: 90px;
+    color: white ;
+    float: left;
+}
+#inner-content2{
+    margin-left: 60px;
+    width:450px;
+    line-height: 1.5;
+}
+#content4{
+    transform: rotate(4deg);
+    position: relative;
+    top:50px;
+    left:90px;
+    font-size: 20px;
+    color: black;
+}
+#heading4::first-letter{
+    font-family: 'Great Vibes', cursive;
+    font-size: 90px;
+    color: black ;
+    float: left;
+    /* margin-top: 0px; */
+}
+#inner-content3{
+    margin-left: 60px;
+    width:500px;
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 0px;
+}
+#content5{
+    transform: rotate(4deg);
+    position: absolute;
+    top:50px;
+    left:90px;
+    font-size: 20px;
+    color: white;
+}
+#heading5::first-letter{
+    font-family: 'Great Vibes', cursive;
+    font-size: 90px;
+    color: white ;
+    float: left;
+}
+#inner-content4{
+    margin-left: 60px;
+    width:500px;
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 0px;
+}
+#content6{
+    transform: rotate(4deg);
+    position: absolute;
+    top:45px;
+    left:90px;
+    font-size: 20px;
+    color: black;
+}
+#heading6::first-letter{
+    font-family: 'Great Vibes', cursive;
+    font-size: 90px;
+    color: black ;
+    float: left;
+}
+#inner-content5{
+    margin-left: 60px;
+    width:500px;
+    line-height: 1.5;
+    text-align: justify;
+}
+#content7{
+    transform: rotate(4deg);
+    position: absolute;
+    top:45px;
+    left:90px;
+    font-size: 20px;
+    color: pink;
+}
+#heading7::first-letter{
+    font-family: 'Great Vibes', cursive;
+    font-size: 90px;
+    color: pink ;
+    width: 100px;
+    
+}
+.head{
+    color:white;
+    position: absolute;
+    top:80px;
+    left:360px;
+}
+.subhead{
+    position: relative;
+    left:90px;
+}
+#inner-content6{
+    margin-left: 60px;
+    width:520px;
+    line-height: 1.5;
+    text-align: justify;
+}
+#content8{
+    transform: rotate(4deg);
+    position: absolute;
+    top:45px;
+    left:90px;
+    font-size: 20px;
+    color: black;
+}
+#heading8::first-letter{
+    font-family: 'Great Vibes', cursive;
+    font-size: 90px;
+    color: black ;
+    /* float: left; */
+}
+#inner-content7{
+    margin-left: 60px;
+    width:500px;
+    line-height: 1.5;
+    text-align: justify;
+}
+#content9{
+    transform: rotate(4deg);
+    position: absolute;
+    top:45px;
+    left:90px;
+    font-size: 20px;
+    color:rgb(82, 4, 82);
+}
+#heading9::first-letter{
+    font-family: 'Great Vibes', cursive;
+    font-size: 90px;
+    color: rgb(82, 4, 82) ;
+    /* float: left; */
+}
+#inner-content8{
+    margin-left: 60px;
+    width:500px;
+    line-height: 1.5;
+    text-align: justify;
+}
+#content10{
+    transform: rotate(4deg);
+    position: absolute;
+    top:45px;
+    left:50px;
+    font-size: 20px;
+    color:black;
+}
+#inner-content9{
+    margin-left: 60px;
+    width:500px;
+    line-height: 1.5;
+    text-align: justify;
+}
+#last{
+    position: absolute;
+    left:60px;
+}
