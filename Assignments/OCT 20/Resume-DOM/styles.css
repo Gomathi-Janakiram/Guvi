@@ -1,0 +1,69 @@
+header{
+    margin-left:380px;
+}
+#first{
+    border: 2px solid grey;
+    width:590px;
+    height: 170px;
+    background-color: grey;
+}
+#image{
+    display: block;
+    border-radius: 550px;
+    padding: 3px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px dotted yellow;
+    width:140px;
+    height:140px;
+}
+#name{
+    border: 2px solid yellow;
+    background-color:rgb(247, 247, 20);
+    border-radius: 5px;
+    padding:10px;
+    width: 120px;
+    text-align: center;
+    position: absolute;
+    top:140px;
+    left:610px;
+    word-spacing: 2px;
+    font-family: 'Playball', cursive;
+}
+#second{
+    border-bottom:2px solid gray;
+    margin-top:10px;
+    width:590px;
+}
+#address{
+    text-align: center;
+}
+#content{
+    width:590px;
+    margin-left:380px;
+    border-collapse: collapse;
+    background-color: lightgrey;
+}
+td{
+    
+    width:50%;
+}
+p{
+    line-height:1.5em;
+}
+.sub-head{
+    text-align: center;
+}
+h3{
+    text-decoration: underline;
+    display: inline;
+}
+#column1{
+    border-right: 2px solid grey;
+}
+.image{
+    border-radius: 100px;
+    padding: 5px;
+    margin-top: 20px;
+}
