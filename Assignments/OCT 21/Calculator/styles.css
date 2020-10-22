@@ -1,0 +1,11 @@
+td:hover{
+    box-shadow: 3px 5px grey;
+}
+td{
+    cursor: pointer;
+}
+body{
+    background-image: url("https://ak.picdn.net/shutterstock/videos/19625323/thumb/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
