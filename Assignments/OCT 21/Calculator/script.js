@@ -69,7 +69,7 @@ data_5.innerHTML="+";
 data_5.addEventListener("click",function(){
     document.getElementById("input").value+=data_5.innerHTML;
 })
-
+// third row
 var row_three=document.createElement("tr");
 var data_6=document.createElement("td");
 data_6.setAttribute("id","four");
@@ -99,7 +99,7 @@ data_9.innerHTML="-";
 data_9.addEventListener("click",function(){
     document.getElementById("input").value+=data_9.innerHTML;
 })
-
+// fourth row
 var row_four=document.createElement("tr");
 var data_10=document.createElement("td");
 data_10.setAttribute("id","seven");
@@ -129,7 +129,7 @@ data_13.innerHTML="*";
 data_13.addEventListener("click",function(){
     document.getElementById("input").value+=data_13.innerHTML;
 })
-
+// fifth row
 var row_five=document.createElement("tr");
 var data_14=document.createElement("td");
 data_14.setAttribute("id","c");
@@ -162,7 +162,7 @@ data_17.addEventListener("click",function(){
     document.getElementById("input").value+=data_17.innerHTML;
 })
 
-
+// appending all the things
 row_five.append(data_14,data_15,data_16,data_17)
 row_four.append(data_10,data_11,data_12,data_13)
 row_three.append(data_6,data_7,data_8,data_9)
