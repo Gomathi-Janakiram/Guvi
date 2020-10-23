@@ -17,7 +17,7 @@ var cover=document.createElement("div")
 cover.setAttribute("class","input-group input-group-lg")
 
 var input=document.createElement("input")
-input.setAttribute("type","text")
+input.setAttribute("type","date")
 input.setAttribute("class","form-control")
 input.setAttribute("aria-label","Sizing example input")
 input.setAttribute("aria-describedby","inputGroup-sizing-lg")
