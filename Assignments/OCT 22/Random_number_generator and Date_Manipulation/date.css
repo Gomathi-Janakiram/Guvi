@@ -1,0 +1,17 @@
+.input-group{
+    margin-top: 30%;
+}
+.btn{
+    position: absolute;
+    top:45%;
+    left:45%;
+}
+#output{
+    position: absolute;
+    top:55%;
+    left:38%;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    
+}
