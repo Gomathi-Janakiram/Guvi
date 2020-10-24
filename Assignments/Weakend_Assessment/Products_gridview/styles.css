@@ -1,0 +1,45 @@
+main{
+    width:65%;
+    margin:auto;
+}
+/* container as display flex so each item will be appeared as flex */
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* giving width,border  to each flex  */
+.item{
+    flex-basis: 250px;
+    border:2px solid black;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    height: 330px;
+}
+/* inner item which contains rate and button is also displayed as flex */
+.inner-item{
+    display: flex;
+    margin-bottom: 30px;
+    padding-left: 15px;
+
+}
+h3{
+    position: relative;
+    bottom:18px;
+    margin-right: 70px;
+    margin-bottom: 55px;
+}
+.head{
+    padding-left: 15px;
+    text-align: left;
+}
+button{
+    background-color:green;
+    border-radius: 5px;
+    border:green;
+    color: white;
+    padding: 5px;
+}
+button:hover{
+    cursor: pointer;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML-Forms</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <form onSubmit="alert('Thank you for submitting the form.')" >
+        <div id="container">
+            <!-- first name -->
+            <div class="flex_item" id="full_name">
+                <div>Full Name</div>
+                <div class="inner-container">
+                    <span class="material-icons">person</span>
+                    <input name="full_name" class="input-field" type="text" placeholder="Full Name" required >
+                </div>
+            </div>
+            <!-- address1 -->
+            <div class="flex_item" id="address1">
+                <div>Address Line 1</div>
+                <div class="inner-container">
+                    <span class="material-icons">house</span>
+                    <input name="address1" class="input-field" type="text" placeholder="Address Line 1" required>
+                </div>
+            </div>
+            <!-- address2 -->
+            <div class="flex_item" id="address1">
+                <div>Address Line 2</div>
+                <div class="inner-container">
+                    <span class="material-icons">house</span>
+                    <input name="address2" class="input-field"  type="text" placeholder="Address Line 2" required>
+                </div>
+            </div>
+            <!-- city -->
+            <div class="flex_item" id="City">
+                <div>City</div>
+                <div class="inner-container">
+                    <span class="material-icons">my_location</span>
+                    <input  name="city"class="input-field" type="text" placeholder="City" required>
+                </div>
+            </div>
+            <!-- state -->
+            <div class="flex_item" id="state">
+                <div>State/Province/Region</div>
+                <div class="inner-container">
+                    <span class="material-icons">room</span>
+                    <input  name="state" class="input-field"  type="text" placeholder="State/Province/Region" required>
+                </div>
+            </div>
+            <!-- zip code -->
+            <div class="flex_item" id="zip">
+                <div>Postal Code/ZIP</div>
+                <div class="inner-container">
+                    <span class="material-icons">mail_outline</span>
+                    <input name="code" class="input-field" type="number" placeholder="Postal Code/ZIP" required>
+                </div>
+            </div>
+            <!-- country  -->
+            <div class="flex_item" id="country">
+                <div>Country</div>
+                <div class="inner-container">
+                    <span class="material-icons">map</span>
+                     <div >
+                        <select id="last" class="input-field"  name="country" required>
+                            <option value="Afghanisthan">Afghanisthan</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeira">Algeira</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="India">India</option>
+                            <option value="Italy">Italy</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Singapore">Singapore</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- email -->
+            <div class="flex_item" id="email">
+                <div>Email</div>
+                <div class="inner-container">
+                    <span class="material-icons">email</span>
+                    <!-- pattern -->
+                    <input name="email" class="input-field"  type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                </div>
+            </div>
+            <!-- number -->
+            <div class="flex_item" id="number">
+                <div>Phone Number</div>
+                <div class="inner-container">
+                    <span class="material-icons">phone</span>
+                    <!-- pattern -->
+                    <input name="number" class="input-field" type="tel" pattern="[0-9]{10}" placeholder="Phone Number" required>
+                </div>
+            </div>
+            <div id="submit">
+                <input id="on" type="submit" value="Submit" >
+            </div>
+        </div>
+    </form>
+        <script src="script.js"></script>
+    </body>
+</html>
