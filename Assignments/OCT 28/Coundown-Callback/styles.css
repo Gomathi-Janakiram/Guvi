@@ -1,0 +1,21 @@
+#text{
+    text-align: center;
+    margin:250px auto;
+    font-size: 100px;
+}
+#flag{
+    width:200px;
+    position: absolute;
+    top:20px;
+    left:550px;
+    animation: flag 5s ease-out infinite;
+}
+
+@keyframes flag{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(2);
+    }
+}
