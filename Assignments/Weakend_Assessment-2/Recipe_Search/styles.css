@@ -1,0 +1,30 @@
+.card{
+    height:450px;
+}
+.card-title {
+    height:80px;
+    /* width: 70%; */
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto; */
+}
+img{
+    height:200px;
+}
+button{
+    height: 40px;
+    width: 99px;
+    color: white;
+}
+h5{
+    /* color:white; */
+    background-color: white;
+}
+body{
+    background-image: url("bg_im.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
