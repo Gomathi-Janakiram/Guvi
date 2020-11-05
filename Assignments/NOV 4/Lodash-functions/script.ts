@@ -40,8 +40,9 @@ console.log(`FILTER function`)
 const filterFunction=(array)=>{
     let string_array=[];
     for(let i=0;i<array.length;i++){
-        if(isNaN(array[i]))
-        string_array.push(array[i])
+        if(isNaN(array[i])){
+            string_array.push(array[i])
+        }
     }
     return string_array
 }
@@ -52,8 +53,8 @@ console.log(`After filterring out only strings from the array the result is: ${f
 
 console.log(`FIND function`)
 const findFunction=(array)=>{
-    var max_to_20=[];
-    for(var i=0;i<array.length;i++){
+    let max_to_20=[];
+    for(let i=0;i<array.length;i++){
         if(array[i]>20){
             max_to_20.push(array[i]);
             break;
@@ -68,8 +69,8 @@ console.log(`To find the  number which is immediately greater than 20 is: ${find
 
 console.log(`SUM function`)
 const sumFunc=(array)=>{
-    var output=0;
-    for(var i=0;i<array.length;i++){
+    let output=0;
+    for(let i=0;i<array.length;i++){
         output+=array[i];
     }
     return output
