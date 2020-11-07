@@ -1,0 +1,36 @@
+.choice-container{
+    display: flex;
+    width: 100%;
+    border:2px solid rgb(83, 166, 240);
+    margin-bottom: 0.5rem;
+    margin-top: 20px;
+    height:80px;
+}
+.center{
+    margin-top: 20px;
+}
+
+.choice-container:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem rgb(83, 166, 240,0.25) ;
+}
+
+.choice{
+    padding:1.5rem 2.5rem;
+    background-color:rgb(83, 166, 240);
+    color: white;
+}
+.choice-text{
+    padding: 1.5rem;
+}
+
+.head{
+    display: flex;
+}
+.question-container{
+    text-align: center;
+}
+#score-container{
+    margin-left: 60%;
+    text-align: center;
+}

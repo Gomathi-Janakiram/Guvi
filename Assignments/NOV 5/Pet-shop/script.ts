@@ -70,3 +70,4 @@ let request=[
 let req=new requestPets(request)
 
 console.log(req.checkAvailability())
+
