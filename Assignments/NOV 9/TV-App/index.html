@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV_App</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+
+            </div>
+            <div id="video_container" class="col-sm-6">
+                <video id="vid">
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="col-sm-3">
+                <div id="remote-container">
+                    <div id="circle">
+                        <button type="button" id="plus" class="btn btn-secondary button">+</button>
+                        <button type="button" id="minus" class="btn btn-secondary button">-</button>
+                        <button type="button" id="right" class="btn btn-secondary button">&gt&gt</button>
+                        <button type="button" id="left" class="btn btn-secondary button">&lt&lt</button>
+                    </div>
+                    <button id="play" type="button" class="btn btn-danger play_pause">Play</button>
+                    <button id="pause" type="button" class="btn btn-danger play_pause">Pause</button>
+                    <button id="on" type="button" class="btn btn-danger">On</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 mt-5">
+                <div id="vol_container"></div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

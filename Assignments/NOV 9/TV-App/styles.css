@@ -1,0 +1,67 @@
+#remote-container{
+    border: 2px solid black;
+    width:200px;
+    height:280px;
+    border-radius: 50px;
+    margin-top: 150px;
+    background-color: lightgrey;
+}
+body{
+    background-image: url("pngtree-painted-warm-home.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#video_container{
+    background-color:black;
+    width:200px;
+    height:400px;
+    margin-top: 80px;
+}
+/* #vol_container{
+    /* margin-top:; */
+/* } */
+#circle{
+    border: 2px solid black;
+    width:150px;
+    height:150px;
+    margin:60px 20px;
+    border-radius: 500px;
+}
+.button{
+    width:40px;
+    padding:5px;
+}
+#plus{
+    position: relative;
+    top:10px;
+    left:50px;
+}
+#minus{
+    position: relative;
+    top:100px;
+    left:10px;
+}
+#left{
+    position: relative;
+    top:20px;
+    left:5px;
+}
+#right{
+    position: relative;
+    top:60px;
+    left:10px;
+}
+.play_pause{
+    margin-top: -80px;
+    margin-left: 25px;
+}
+#on{
+    text-align: center;
+    border-radius: 50%;
+    width:40px;
+    height:30px;
+    padding:2px 2px;
+    position: absolute;
+    top:160px;
+    right:110px;
+}

@@ -1,0 +1,56 @@
+h1{
+    text-align: center;
+}
+
+.inp{
+    margin: 20px 450px;
+}
+#id_head{
+    padding: 40px;
+    font-size: 30px;
+    color: rgb(10, 82, 85);
+}
+#name_head{
+    padding: 20px;
+    font-size: 30px;
+    color:rgb(10, 82, 85);
+}
+#btn{
+    margin:20px 650px;
+    padding: 8px;
+}
+#btn:hover{
+    cursor:pointer;
+    box-shadow:2px 2px 10px lightslategray ;
+}
+#id{
+    padding:10px;
+}
+#name{
+    padding:10px;
+}
+#btns{
+    margin:20px 520px;
+    width:100%;
+}
+#deposit{
+    padding: 10px;
+    margin-right: 20px;
+    width:150px;
+    font-size:30px;
+}
+#deposit:hover{
+    cursor:pointer;
+    box-shadow:2px 2px 10px lightslategray ;
+}
+#withdraw{
+    padding: 10px;
+    margin-right: 20px;
+    width:150px;
+    font-size:30px;
+}
+#withdraw:hover{
+    cursor:pointer;
+    box-shadow:2px 2px 10px lightslategray ;
+}
+
