@@ -1,0 +1,144 @@
+
+TASK-1
+
+Create a class collection:
+ 
+1. Insert many student record with name, primary address, favourite teacher and age. 
+
+> db.class.insertMany([ 
+	{"name":"Arun", "primary_address":"11 xyz nagar trichy", "Favourite_teacher":"Anitha","age":14},
+	{"name":"Vijay","primary_address":"22 fgh nagar ooty","Favourite_teacher":"Aishwarya","age":13},
+	{"name":"Ashwini","primary_address":"132 xyz nagar chennai","Favourite_teacher":"Archana","age":12},
+	{"name":"Sadhana","primary_address":"143 nagar chennai","Favourite_teacher":"Anitha","age":15}
+     ])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5fb61c030122d39d81fe2b90"),
+                ObjectId("5fb61c030122d39d81fe2b91"),
+                ObjectId("5fb61c030122d39d81fe2b92"),
+                ObjectId("5fb61c030122d39d81fe2b93")
+        ]
+}
+> db.class.find().pretty()
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b90"),
+        "name" : "Arun",
+        "primary_address" : "11 xyz nagar trichy",
+        "Favourite_teacher" : "Anitha",
+        "age" : 14
+}
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b91"),
+        "name" : "Vijay",
+        "primary_address" : "22 fgh nagar ooty",
+        "Favourite_teacher" : "Aishwarya",
+        "age" : 13
+}
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b92"),
+        "name" : "Ashwini",
+        "primary_address" : "132 xyz nagar chennai",
+        "Favourite_teacher" : "Archana",
+        "age" : 12
+}
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b93"),
+        "name" : "Sadhana",
+        "primary_address" : "143 nagar chennai",
+        "Favourite_teacher" : "Anitha",
+        "age" : 15
+}
+
+2. Check weather a student name ‘Arun’ is present in the collection.
+
+> db.class.find({"name":{"$in":["Arun"]}}).pretty()
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b90"),
+        "name" : "Arun",
+        "primary_address" : "11 xyz nagar trichy",
+        "Favourite_teacher" : "Anitha",
+        "age" : 14
+} 
+
+3. Change the primary address of the student ‘Vijay’ as no ‘123 abc nagar Chennai'.
+
+> db.class.updateOne({name:"Vijay"},{"$set":{"primary_address":"123 abc nagar chennai"}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.class.find({"name":"Vijay"}).pretty()
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b91"),
+        "name" : "Vijay",
+        "primary_address" : "123 abc nagar chennai",
+        "Favourite_teacher" : "Aishwarya",
+        "age" : 13
+}
+
+4. Find all the student whose age is greater than 12. 
+
+> db.class.find({"age":{"$gt":12}}).pretty()
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b90"),
+        "name" : "Arun",
+        "primary_address" : "11 xyz nagar trichy",
+        "Favourite_teacher" : "Anitha",
+        "age" : 14
+}
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b91"),
+        "name" : "Vijay",
+        "primary_address" : "123 abc nagar chennai",
+        "Favourite_teacher" : "Aishwarya",
+        "age" : 13
+}
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b93"),
+        "name" : "Sadhana",
+        "primary_address" : "143 nagar chennai",
+        "Favourite_teacher" : "Anitha",
+        "age" : 15
+}
+
+5. Find the favourite teacher of student ‘Ashwini’ 
+
+> db.class.find({"name":"Ashwini"}).pretty()
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b92"),
+        "name" : "Ashwini",
+        "primary_address" : "132 xyz nagar chennai",
+        "Favourite_teacher" : "Archana",
+        "age" : 12
+}
+6. Count the number of student present in student collection. 
+
+> db.class.count()
+4
+
+7. Count the students who live in Chennai.
+
+> db.class.find({"primary_address":{"$regex":"chennai"}}).pretty()
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b91"),
+        "name" : "Vijay",
+        "primary_address" : "123 abc nagar chennai",
+        "Favourite_teacher" : "Aishwarya",
+        "age" : 13
+}
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b92"),
+        "name" : "Ashwini",
+        "primary_address" : "132 xyz nagar chennai",
+        "Favourite_teacher" : "Archana",
+        "age" : 12
+}
+{
+        "_id" : ObjectId("5fb61c030122d39d81fe2b93"),
+        "name" : "Sadhana",
+        "primary_address" : "143 nagar chennai",
+        "Favourite_teacher" : "Anitha",
+        "age" : 15
+}
+8. Count the student whose favourite teacher is ‘Anitha’.
+
+> db.class.find({"Favourite_teacher":"Anitha"}).count()
+2
