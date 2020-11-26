@@ -1,0 +1,374 @@
+
+#------------------------------------------------------petshop------------------------------------
+
+1. Write an insert query to create different kinds of pets available for adoption. Add required fields containing the characteristics and history of the pet.
+
+> db.availability.insertMany([{
+... "type":"dog",
+... "gender":"male",
+... "breed":"pomeranian",
+... "age":2
+... },
+... {
+... "type":"cat",
+... "gender":"male",
+... "breed":"persian",
+... "age":2
+... },
+... {
+... "type":"dog",
+... "gender":"female",
+... "breed":"beagle",
+... "age":4
+... },{
+... "type":"parrot",
+... "gender":"female",
+... "breed":"rainbow lorikeet",
+... "age":2
+... },
+... {
+... "type":"parrot",
+... "gender":"female",
+... "breed":"sun-corn-parrot",
+... "age":2
+... },
+... {
+... "type":"rabbit",
+... "gender":"male",
+... "breed":"american-rabbit",
+... "age":6
+... },
+... {"type":"rabbit",
+... "gender":"male",
+... "breed":"angora",
+... "age":8
+... }])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5fbf20e8db29cf5d97d78786"),
+                ObjectId("5fbf20e8db29cf5d97d78787"),
+                ObjectId("5fbf20e8db29cf5d97d78788"),
+                ObjectId("5fbf20e8db29cf5d97d78789"),
+                ObjectId("5fbf20e8db29cf5d97d7878a"),
+                ObjectId("5fbf20e8db29cf5d97d7878b"),
+                ObjectId("5fbf20e8db29cf5d97d7878c")
+        ]
+}
+> db.availability.find().pretty()
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d78786"),
+        "type" : "dog",
+        "gender" : "male",
+        "breed" : "pomeranian",
+        "age" : 2
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d78787"),
+        "type" : "cat",
+        "gender" : "male",
+        "breed" : "persian",
+        "age" : 2
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d78788"),
+        "type" : "dog",
+        "gender" : "female",
+        "breed" : "beagle",
+        "age" : 4
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d78789"),
+        "type" : "parrot",
+        "gender" : "female",
+        "breed" : "rainbow lorikeet",
+        "age" : 2
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d7878a"),
+        "type" : "parrot",
+        "gender" : "female",
+        "breed" : "sun-corn-parrot",
+        "age" : 2
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d7878b"),
+        "type" : "rabbit",
+        "gender" : "male",
+        "breed" : "american-rabbit",
+        "age" : 6
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d7878c"),
+        "type" : "rabbit",
+        "gender" : "male",
+        "breed" : "angora",
+        "age" : 8
+}
+
+2. Write an insert query to store the incoming enquiries (availability check) for pets in request collection.Every enquiry will contain an array of pets of their choice.
+
+> db.request.insertMany([{
+... "request_type":"dog",
+... "count":1,
+... "request_breed":"pomeranian"
+... },
+... {
+... "request_type":"chicken",
+... "count":6,
+... "request_breed":"leghorn"
+... },
+... {
+... "request_type":"parrot",
+... "count":2,
+... "request_breed":"yellow lorikeet"
+... },
+... {
+... "request_type":"cat",
+... "count":1,
+... "request_breed":"persian"
+... },
+... {
+... "request_type":"rabbit",
+... "count":1,
+... "request_breed":"angora"
+... }
+... ])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("5fbf21dedb29cf5d97d7878d"),
+                ObjectId("5fbf21dedb29cf5d97d7878e"),
+                ObjectId("5fbf21dedb29cf5d97d7878f"),
+                ObjectId("5fbf21dedb29cf5d97d78790"),
+                ObjectId("5fbf21dedb29cf5d97d78791")
+        ]
+}
+> db.request.find().pretty()
+{
+        "_id" : ObjectId("5fbf21dedb29cf5d97d7878d"),
+        "request_type" : "dog",
+        "count" : 1,
+        "request_breed" : "pomeranian"
+}
+{
+        "_id" : ObjectId("5fbf21dedb29cf5d97d7878e"),
+        "request_type" : "chicken",
+        "count" : 6,
+        "request_breed" : "leghorn"
+}
+{
+        "_id" : ObjectId("5fbf21dedb29cf5d97d7878f"),
+        "request_type" : "parrot",
+        "count" : 2,
+        "request_breed" : "yellow lorikeet"
+}
+{
+        "_id" : ObjectId("5fbf21dedb29cf5d97d78790"),
+        "request_type" : "cat",
+        "count" : 1,
+        "request_breed" : "persian"
+}
+{
+        "_id" : ObjectId("5fbf21dedb29cf5d97d78791"),
+        "request_type" : "rabbit",
+        "count" : 1,
+        "request_breed" : "angora"
+}
+
+3. Write a query to find the status (available or not ) of the first 5 enquiry in request collection, based on the data present in the availability collection.
+
+> db.request.aggregate( [
+		{ "$lookup":{ "from":"availability", "localField":"request_type", "foreignField":"type", "as":"result" } },
+	 	{ "$project":{ "request_type":1, "request_breed":1, "result.type":1, "result.breed":1 } },{"$limit":5} 
+	]).pretty()
+
+{
+        "_id" : ObjectId("5fbf21dedb29cf5d97d7878d"),
+        "request_type" : "dog",
+        "request_breed" : "pomeranian",
+        "result" : [
+                {
+                        "type" : "dog",
+                        "breed" : "pomeranian"
+                },
+                {
+                        "type" : "dog",
+                        "breed" : "beagle"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5fbf21dedb29cf5d97d7878e"),
+        "request_type" : "chicken",
+        "request_breed" : "leghorn",
+        "result" : [ ]
+}
+{
+        "_id" : ObjectId("5fbf21dedb29cf5d97d7878f"),
+        "request_type" : "parrot",
+        "request_breed" : "yellow lorikeet",
+        "result" : [
+                {
+                        "type" : "parrot",
+                        "breed" : "rainbow lorikeet"
+                },
+                {
+                        "type" : "parrot",
+                        "breed" : "sun-corn-parrot"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5fbf21dedb29cf5d97d78790"),
+        "request_type" : "cat",
+        "request_breed" : "persian",
+        "result" : [
+                {
+                        "type" : "cat",
+                        "breed" : "persian"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5fbf21dedb29cf5d97d78791"),
+        "request_type" : "rabbit",
+        "request_breed" : "angora",
+        "result" : [
+                {
+                        "type" : "rabbit",
+                        "breed" : "american-rabbit"
+                },
+                {
+                        "type" : "rabbit",
+                        "breed" : "angora"
+                }
+        ]
+}
+
+4. Write a query to find the count of different kinds of pets found in availability collection(eg.Dog -5, Cat-3, Parrot-4)
+
+> db.availability.aggregate([
+		{"$group":{"_id":"$type","count":{"$sum":1}}}
+	]).pretty()
+{ "_id" : "dog", "count" : 2 }
+{ "_id" : "cat", "count" : 1 }
+{ "_id" : "rabbit", "count" : 2 }
+{ "_id" : "parrot", "count" : 2 }
+
+5. Write a query that maps the request data with availability data, explaining how many incoming requests are matching with each entry (pet availability) found 
+in availability collection.
+
+> db.availability.aggregate( [ 
+		{"$lookup":{"from":"request","localField":"type","foreignField":"request_type","as":"result"}}
+	]).pretty()
+
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d78786"),
+        "type" : "dog",
+        "gender" : "male",
+        "breed" : "pomeranian",
+        "age" : 2,
+        "result" : [
+                {
+                        "_id" : ObjectId("5fbf21dedb29cf5d97d7878d"),
+                        "request_type" : "dog",
+                        "count" : 1,
+                        "request_breed" : "pomeranian"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d78787"),
+        "type" : "cat",
+        "gender" : "male",
+        "breed" : "persian",
+        "age" : 2,
+        "result" : [
+                {
+                        "_id" : ObjectId("5fbf21dedb29cf5d97d78790"),
+                        "request_type" : "cat",
+                        "count" : 1,
+                        "request_breed" : "persian"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d78788"),
+        "type" : "dog",
+        "gender" : "female",
+        "breed" : "beagle",
+        "age" : 4,
+        "result" : [
+                {
+                        "_id" : ObjectId("5fbf21dedb29cf5d97d7878d"),
+                        "request_type" : "dog",
+                        "count" : 1,
+                        "request_breed" : "pomeranian"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d78789"),
+        "type" : "parrot",
+        "gender" : "female",
+        "breed" : "rainbow lorikeet",
+        "age" : 2,
+        "result" : [
+                {
+                        "_id" : ObjectId("5fbf21dedb29cf5d97d7878f"),
+                        "request_type" : "parrot",
+                        "count" : 2,
+                        "request_breed" : "yellow lorikeet"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d7878a"),
+        "type" : "parrot",
+        "gender" : "female",
+        "breed" : "sun-corn-parrot",
+        "age" : 2,
+        "result" : [
+                {
+                        "_id" : ObjectId("5fbf21dedb29cf5d97d7878f"),
+                        "request_type" : "parrot",
+                        "count" : 2,
+                        "request_breed" : "yellow lorikeet"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d7878b"),
+        "type" : "rabbit",
+        "gender" : "male",
+        "breed" : "american-rabbit",
+        "age" : 6,
+        "result" : [
+                {
+                        "_id" : ObjectId("5fbf21dedb29cf5d97d78791"),
+                        "request_type" : "rabbit",
+                        "count" : 1,
+                        "request_breed" : "angora"
+                }
+        ]
+}
+{
+        "_id" : ObjectId("5fbf20e8db29cf5d97d7878c"),
+        "type" : "rabbit",
+        "gender" : "male",
+        "breed" : "angora",
+        "age" : 8,
+        "result" : [
+                {
+                        "_id" : ObjectId("5fbf21dedb29cf5d97d78791"),
+                        "request_type" : "rabbit",
+                        "count" : 1,
+                        "request_breed" : "angora"
+                }
+        ]
+}
+
+
+
+
