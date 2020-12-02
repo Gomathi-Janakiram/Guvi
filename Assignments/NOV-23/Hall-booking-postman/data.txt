@@ -1,0 +1,47 @@
+--------------creating halls---------------
+{
+    "Name":"A",
+    "sqft":100,
+    "Number of seats":50,
+    "price per hour":120
+}
+
+{
+    "Name":"B",
+    "sqft":180,
+    "Number of seats":200,
+    "price per hour":240
+}
+
+{
+    "Name":"C",
+    "sqft":80,
+    "Number of seats":50,
+    "price per hour":100
+}
+
+-------------------creating customers------------
+
+{
+    "Name":"cust1",
+    "email":"cust1@gmail.com",
+    "PhoneNumber":1234567
+}
+
+{
+    "Name":"cust2",
+    "email":"cust2@gmail.com",
+    "PhoneNumber":12345678
+}
+
+--------------------orders-------------------
+
+
+{
+    "hall_id":1,
+    "cust_id":2,
+    "startDate":"Dec 7",
+    "endDate":"Dec 9"
+}
+
+
