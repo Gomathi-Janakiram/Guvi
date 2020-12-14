@@ -5,6 +5,7 @@ interface petDetails{
 }
 // Availability class
 class petsAvailable{
+        //Array<data type> here elements should be of type petDetails(interface) and values are stored in pets.Fow now it is empty array
     pets:Array<petDetails>=[];
     constructor(availablePets:Array<petDetails>){
         this.pets.push(...availablePets)
